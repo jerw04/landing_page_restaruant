@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+	/* Global Styles */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+.btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e55337;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: auto;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-section p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.menu-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.gallery-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-items a {
+    margin: 10px;
+}
+
+.gallery-items img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-items img:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 50px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-control {
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: #e55337;
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-section button:hover {
+    background-color: #e55337;
+}
+
+/* Location Section */
+.location-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.location-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Name</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Enjoy the finest dining experience at Restaurant Name. Discover our menu, make reservations, and learn more about our story.">
+    <meta name="keywords" content="restaurant, dining, cuisine, food, reservation">
+    <meta name="author" content="Restaurant Name">
+
+    <!-- Social Sharing Meta Tags -->
+    <meta property="og:title" content="Restaurant Name - Fine Dining Experience">
+    <meta property="og:description" content="Experience the finest cuisine and ambiance. Make a reservation today!">
+    <meta property="og:image" content="path-to-social-share-image.jpg">
+    <meta property="og:url" content="https://www.restaurantname.com">
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Restaurant Name</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reservation" class="btn">Reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section" style="background-image: url('https://cdn.pixabay.com/photo/2015/06/30/18/35/st-826687_640.jpg');">
+        <div class="hero-content">
+            <h1>Welcome to Restaurant Name</h1>
+            <p>Experience the finest cuisine and a warm ambiance</p>
+            <a href="#menu" class="btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2>Our Menu</h2>
+            <div class="menu-items">
+        <div class="menu-item">
+            <img src="https://cdn.pixabay.com/photo/2022/12/16/16/15/green-leaves-7660080_640.jpg" alt="Dish 1">
+            <h3>Cream-Stuffed-Balls</h3>
+            <p>A cheesy-creamy rice-balls just to fit a healthy breakfast</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://cdn.pixabay.com/photo/2023/08/26/14/19/cupcake-8215179_640.jpg" alt="Dish 2">
+            <h3>Muffins</h3>
+            <p>Who isn't ready for a casual snack of muffin?</p>
+        </div>
+        <!-- Add more menu items as needed -->
+    </div>
+
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery-items">
+            <a href="path-to-image1.jpg" data-lightbox="gallery"><img src="https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dish 1"></a>
+            <a href="path-to-image2.jpg" data-lightbox="gallery"><img src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dish 2"></a>
+			<a href="path-to-image2.jpg" data-lightbox="gallery"><img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dish 2"></a>
+            <!-- Add more images -->
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <h2>What Our Customers Say</h2>
+        <div class="carousel">
+            <div class="carousel-item active">
+                <p>"Amazing food and great ambiance!" - Customer A</p>
+            </div>
+            <div class="carousel-item">
+                <p>"A wonderful dining experience!" - Customer B</p>
+            </div>
+			<div class="carousel-item">
+                <p>"One of the best in the City!" - Customer C</p>
+            </div>
+            <!-- Add more testimonials -->
+        </div>
+        <button class="carousel-control prev">Prev</button>
+        <button class="carousel-control next">Next</button>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Our story, our passion, and our commitment to excellence</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Restaurant Name, Jerwin Manuel ltd., All rights reserved.</p>
+    </footer>
+
+    
+</body>
+<script>
+// Carousel Functionality
+let currentItem = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+
+document.querySelector('.next').addEventListener('click', () => {
+    items[currentItem].classList.remove('active');
+    currentItem = (currentItem + 1) % totalItems;
+    items[currentItem].classList.add('active');
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    items[currentItem].classList.remove('active');
+    currentItem = (currentItem - 1 + totalItems) % totalItems;
+    items[currentItem].classList.add('active');
+});
+
+// Google Maps Initialization
+function initMap() {
+    const location = { lat: -25.344, lng: 131.036 }; // Example coordinates
+    const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: location,
+    });
+    const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+    });
+}
+</script>
+
+</html>
